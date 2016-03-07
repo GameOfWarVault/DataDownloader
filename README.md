@@ -6,14 +6,13 @@ Game of War has a file called `manifest`, which contains all the game data. Some
 This script first downloads the manifest, and then all the associated files within it.
 
 # Requisites
-Works with `Python 2.7`.
+- Works with `Python 2.7`.
+- Requires `colorama` module.
 
 # Usage
 Run `main.py`, it will download and create a `manifest.json` file if not present, and create a `data` folder to download all files from the game if not present.
 
 # Roadmap
-- Multiprocessing to download faster.
-- Use colorama for user-friendliness.
 - Unpack *.ixb files (they are just zip files), and dump contained data.
 - Decompile *.luac files in *.ixb packages.
 - Investigate where root *.luac files come from.
