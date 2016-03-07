@@ -58,8 +58,11 @@ def download_rss(filename):
         print (filename + ' not recognized.')
     else:
         try:
-            data = download(path + filename)
-            write(data, 'data/' + filename)
+            if os.path.isfile('data/' + filename):
+                print (path + filename + ' already exists, skipping')
+            else:
+                data = download(path + filename)
+                write(data, 'data/' + filename)
         except urllib2.HTTPError, err:
             if err.code == 404:
                 print (path + filename + ' not found')
